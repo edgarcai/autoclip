@@ -7,7 +7,7 @@ import AccountHealthMonitor from './AccountHealthMonitor'
 
 const { TextArea } = Input
 const { Text, Paragraph } = Typography
-const { TabPane } = Tabs
+// 移除TabPane解构，使用items属性
 
 interface LoginMethod {
   id: string
@@ -523,148 +523,168 @@ const BilibiliAccountManager: React.FC = () => {
           style={{ marginBottom: 16 }}
         />
 
-        <Tabs activeKey={activeTab} onChange={setActiveTab}>
-          <TabPane tab="Cookie导入" key="cookie">
-            <Form form={cookieForm} onFinish={handleCookieLogin} layout="vertical">
-              <Form.Item
-                name="nickname"
-                label="昵称"
-                rules={[{ required: true, message: '请输入昵称' }]}
-              >
-                <Input placeholder="请输入账号昵称" />
-              </Form.Item>
-              
-                             <Form.Item
-                 name="cookies"
-                 label={
-                   <Space>
-                     <span>Cookie</span>
-                     <Button 
-                       type="link" 
-                       size="small" 
-                       icon={<QuestionCircleOutlined />}
-                       onClick={() => setCookieHelperVisible(true)}
-                     >
-                       获取帮助
-                     </Button>
-                   </Space>
-                 }
-                 rules={[{ required: true, message: '请输入Cookie' }]}
-               >
-                 <TextArea
-                   rows={6}
-                   placeholder="请从浏览器开发者工具中复制Cookie，格式如：SESSDATA=xxx; bili_jct=xxx; DedeUserID=xxx"
-                 />
-               </Form.Item>
-              
-              <Form.Item>
-                <Button type="primary" htmlType="submit" loading={loading} block>
-                  导入Cookie
-                </Button>
-              </Form.Item>
-            </Form>
-            
-                         <Divider />
-             <Paragraph type="secondary" style={{ fontSize: '12px' }}>
-               <Text strong>快速获取Cookie：</Text>
-               <br />
-               点击上方的"获取帮助"按钮，查看详细的Cookie获取步骤指南
-             </Paragraph>
-          </TabPane>
-
-          <TabPane tab="账号密码" key="password">
-            <Form form={passwordForm} onFinish={handlePasswordLogin} layout="vertical">
-              <Form.Item
-                name="username"
-                label="用户名"
-                rules={[{ required: true, message: '请输入用户名' }]}
-              >
-                <Input placeholder="请输入B站用户名或手机号" />
-              </Form.Item>
-              
-              <Form.Item
-                name="password"
-                label="密码"
-                rules={[{ required: true, message: '请输入密码' }]}
-              >
-                <Input.Password placeholder="请输入密码" />
-              </Form.Item>
-              
-              <Form.Item
-                name="nickname"
-                label="昵称"
-                rules={[{ required: true, message: '请输入昵称' }]}
-              >
-                <Input placeholder="请输入账号昵称" />
-              </Form.Item>
-              
-              <Form.Item>
-                <Button type="primary" htmlType="submit" loading={loading} block>
-                  登录
-                </Button>
-              </Form.Item>
-            </Form>
-            
-            <Alert
-              message="注意"
-              description="账号密码登录可能需要处理验证码，如果遇到问题建议使用Cookie导入方式。"
-              type="warning"
-              showIcon
-            />
-          </TabPane>
-
-          <TabPane tab="扫码登录" key="qr">
-            <div style={{ textAlign: 'center' }}>
-              {!qrSessionId ? (
-                <div>
-                  <Form.Item label="昵称">
-                    <Input placeholder="请输入账号昵称（可选）" />
-                  </Form.Item>
-                  <Button 
-                    type="primary" 
-                    icon={<QrcodeOutlined />}
-                    onClick={() => startQRLogin()}
-                    loading={loading}
-                    block
-                  >
-                    开始扫码登录
-                  </Button>
-                </div>
-              ) : (
-                <div>
-                  {qrCodeUrl && (
-                    <div style={{ marginBottom: '16px' }}>
-                      <img src={qrCodeUrl} alt="二维码" style={{ maxWidth: '200px' }} />
-                    </div>
-                  )}
+        <Tabs 
+          activeKey={activeTab} 
+          onChange={setActiveTab}
+          items={[
+            {
+              key: 'cookie',
+              label: 'Cookie导入',
+              children: (
+                <>
+                  <Form form={cookieForm} onFinish={handleCookieLogin} layout="vertical">
+                    <Form.Item
+                      name="nickname"
+                      label="昵称"
+                      rules={[{ required: true, message: '请输入昵称' }]}
+                    >
+                      <Input placeholder="请输入账号昵称" />
+                    </Form.Item>
+                    
+                    <Form.Item
+                      name="cookies"
+                      label={
+                        <Space>
+                          <span>Cookie</span>
+                          <Button 
+                            type="link" 
+                            size="small" 
+                            icon={<QuestionCircleOutlined />}
+                            onClick={() => setCookieHelperVisible(true)}
+                          >
+                            获取帮助
+                          </Button>
+                        </Space>
+                      }
+                      rules={[{ required: true, message: '请输入Cookie' }]}
+                    >
+                      <TextArea
+                        rows={6}
+                        placeholder="请从浏览器开发者工具中复制Cookie，格式如：SESSDATA=xxx; bili_jct=xxx; DedeUserID=xxx"
+                      />
+                    </Form.Item>
+                    
+                    <Form.Item>
+                      <Button type="primary" htmlType="submit" loading={loading} block>
+                        导入Cookie
+                      </Button>
+                    </Form.Item>
+                  </Form>
                   
-                  {qrLoginStatus === 'pending' && (
-                    <p>正在生成二维码...</p>
-                  )}
+                  <Divider />
+                  <Paragraph type="secondary" style={{ fontSize: '12px' }}>
+                    <Text strong>快速获取Cookie：</Text>
+                    <br />
+                    点击上方的"获取帮助"按钮，查看详细的Cookie获取步骤指南
+                  </Paragraph>
+                </>
+              )
+            },
+            {
+              key: 'password',
+              label: '账号密码',
+              children: (
+                <>
+                  <Form form={passwordForm} onFinish={handlePasswordLogin} layout="vertical">
+                    <Form.Item
+                      name="username"
+                      label="用户名"
+                      rules={[{ required: true, message: '请输入用户名' }]}
+                    >
+                      <Input placeholder="请输入B站用户名或手机号" />
+                    </Form.Item>
+                    
+                    <Form.Item
+                      name="password"
+                      label="密码"
+                      rules={[{ required: true, message: '请输入密码' }]}
+                    >
+                      <Input.Password placeholder="请输入密码" />
+                    </Form.Item>
+                    
+                    <Form.Item
+                      name="nickname"
+                      label="昵称"
+                      rules={[{ required: true, message: '请输入昵称' }]}
+                    >
+                      <Input placeholder="请输入账号昵称" />
+                    </Form.Item>
+                    
+                    <Form.Item>
+                      <Button type="primary" htmlType="submit" loading={loading} block>
+                        登录
+                      </Button>
+                    </Form.Item>
+                  </Form>
                   
-                  {qrLoginStatus === 'processing' && (
-                    <p>请使用B站APP扫描二维码</p>
-                  )}
+                  <Alert
+                    message="注意"
+                    description="账号密码登录可能需要处理验证码，如果遇到问题建议使用Cookie导入方式。"
+                    type="warning"
+                    showIcon
+                  />
+                </>
+              )
+            },
+            {
+              key: 'qr',
+              label: '扫码登录',
+              children: (
+                <>
+                  <div style={{ textAlign: 'center' }}>
+                    {!qrSessionId ? (
+                      <div>
+                        <Form.Item label="昵称">
+                          <Input placeholder="请输入账号昵称（可选）" />
+                        </Form.Item>
+                        <Button 
+                          type="primary" 
+                          icon={<QrcodeOutlined />}
+                          onClick={() => startQRLogin()}
+                          loading={loading}
+                          block
+                        >
+                          开始扫码登录
+                        </Button>
+                      </div>
+                    ) : (
+                      <div>
+                        {qrCodeUrl && (
+                          <div style={{ marginBottom: '16px' }}>
+                            <img src={qrCodeUrl} alt="二维码" style={{ maxWidth: '200px' }} />
+                          </div>
+                        )}
+                        
+                        {qrLoginStatus === 'pending' && (
+                          <p>正在生成二维码...</p>
+                        )}
+                        
+                        {qrLoginStatus === 'processing' && (
+                          <p>请使用B站APP扫描二维码</p>
+                        )}
+                        
+                        {qrLoginStatus === 'success' && (
+                          <p style={{ color: '#52c41a' }}>✅ 登录成功！</p>
+                        )}
+                        
+                        {qrLoginStatus === 'failed' && (
+                          <p style={{ color: '#ff4d4f' }}>❌ 登录失败，请重试</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
                   
-                  {qrLoginStatus === 'success' && (
-                    <p style={{ color: '#52c41a' }}>✅ 登录成功！</p>
-                  )}
-                  
-                  {qrLoginStatus === 'failed' && (
-                    <p style={{ color: '#ff4d4f' }}>❌ 登录失败，请重试</p>
-                  )}
-                </div>
-              )}
-            </div>
-            
-            <Alert
-              message="风险提示"
-              description="扫码登录可能触发B站风控机制，建议优先使用Cookie导入方式。"
-              type="error"
-              showIcon
-            />
-          </TabPane>
-        </Tabs>
+                  <Alert
+                    message="风险提示"
+                    description="扫码登录可能触发B站风控机制，建议优先使用Cookie导入方式。"
+                    type="error"
+                    showIcon
+                  />
+                </>
+              )
+            }
+          ]}
+        />
       </Modal>
 
       <CookieHelper 

@@ -128,7 +128,7 @@ const ClipDetailModal: React.FC<ClipDetailModalProps> = ({
         footer={null}
         width={800}
         centered
-        destroyOnClose
+        destroyOnHidden
         style={{ top: 20 }}
         styles={{
           body: {
@@ -312,4 +312,4 @@ const ClipDetailModal: React.FC<ClipDetailModalProps> = ({
   )
 }
 
-export default ClipDetailModal 
+export default ClipDetailModal

@@ -1,319 +1,615 @@
-2025-09-15 15:22:21,829 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 15:22:22,168 - backend.services.simple_progress - INFO - Redis连接成功
-/Users/zhoukk/autoclip/backend/main.py:39: DeprecationWarning: 
-        on_event is deprecated, use lifespan event handlers instead.
+2025-11-01 12:03:30,211 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 12:03:30,454 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 12:03:30,528 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 12:03:30,529 - backend.main - INFO - 数据库表创建完成
+2025-11-01 12:03:30,529 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 12:03:30,529 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 12:04:31,991 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:04:31,991 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:04:31,992 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:04:31,992 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:04:34,305 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:04:35,331 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:04:43,850 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:09:01,780 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:09:12,498 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:09:12,498 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:09:12,499 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:09:34,132 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:09:34,132 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:09:34,132 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:13:01,676 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 12:13:01,682 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 12:14:01,879 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 12:14:02,110 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 12:14:02,193 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 12:14:02,194 - backend.main - INFO - 数据库表创建完成
+2025-11-01 12:14:02,194 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 12:14:02,194 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 12:15:53,562 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 12:15:53,562 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 12:17:14,801 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 12:17:15,046 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 12:17:15,136 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 12:17:15,137 - backend.main - INFO - 数据库表创建完成
+2025-11-01 12:17:15,137 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 12:17:15,137 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 12:17:51,531 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:17:51,532 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:17:51,532 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:17:51,532 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:17:53,843 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:25,737 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:25,739 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:18:25,739 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:18:25,740 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:26,661 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:28,347 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:29,081 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:29,265 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:29,459 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:29,628 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:33,315 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:18:33,315 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:18:33,315 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:35,653 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:35,657 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:18:35,657 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:18:35,657 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:36,816 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:37,473 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:18:37,643 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:43:26,249 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 12:43:26,250 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 12:43:47,870 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 12:43:48,092 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 12:43:48,162 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 12:43:48,163 - backend.main - INFO - 数据库表创建完成
+2025-11-01 12:43:48,163 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 12:43:48,163 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 12:43:57,294 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:43:57,294 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:43:57,294 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:43:57,295 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:28,132 - backend.core.llm_manager - ERROR - 测试dashscope连接失败: 请安装dashscope: pip install dashscope
+2025-11-01 12:44:30,883 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:44:30,883 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:44:30,883 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:31,924 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:34,482 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:34,485 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:44:34,486 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:44:34,486 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:37,196 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:38,031 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:38,573 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:38,761 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:38,935 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:39,109 - backend.core.llm_manager - ERROR - 测试gemini连接失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 12:44:47,968 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 12:44:47,976 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 12:44:47,977 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:17:02,736 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:17:02,738 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 17:17:03,273 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:17:03,608 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 17:17:03,676 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 17:17:03,680 - backend.main - INFO - 数据库表创建完成
+2025-11-01 17:17:03,680 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 17:17:03,680 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:17:27,632 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:17:27,632 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 17:17:28,077 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:17:28,329 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 17:17:28,400 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 17:17:28,401 - backend.main - INFO - 数据库表创建完成
+2025-11-01 17:17:28,402 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 17:17:28,402 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:17:45,284 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:17:45,284 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 17:17:45,720 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:17:45,964 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 17:17:46,034 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 17:17:46,035 - backend.main - INFO - 数据库表创建完成
+2025-11-01 17:17:46,035 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 17:17:46,035 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:19:43,369 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:19:43,660 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 17:19:43,756 - __main__ - INFO - 启动服务器，端口: 8000
+2025-11-01 17:19:43,772 - __main__ - INFO - 启动AutoClip API服务...
+2025-11-01 17:19:43,773 - __main__ - INFO - 数据库表创建完成
+2025-11-01 17:19:43,773 - __main__ - INFO - API密钥已加载到环境变量
+2025-11-01 17:19:43,773 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:19:43,774 - __main__ - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:19:43,774 - __main__ - INFO - WebSocket网关服务已禁用
+2025-11-01 17:20:15,837 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:20:16,104 - backend.services.simple_progress - ERROR - Redis连接失败: name 'os' is not defined
+2025-11-01 17:20:16,245 - __main__ - INFO - 启动服务器，端口: 8000
+2025-11-01 17:20:16,260 - __main__ - INFO - 启动AutoClip API服务...
+2025-11-01 17:20:16,261 - __main__ - INFO - 数据库表创建完成
+2025-11-01 17:20:16,261 - __main__ - INFO - API密钥已加载到环境变量
+2025-11-01 17:20:16,261 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:20:16,262 - __main__ - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:20:16,262 - __main__ - INFO - WebSocket网关服务已禁用
+2025-11-01 17:20:31,933 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:20:31,939 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 17:20:32,385 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:20:32,638 - backend.services.simple_progress - INFO - Redis连接成功
+2025-11-01 17:20:32,707 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-01 17:20:32,708 - backend.main - INFO - 数据库表创建完成
+2025-11-01 17:20:32,708 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-01 17:20:32,708 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:20:40,608 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:20:40,886 - backend.services.simple_progress - INFO - Redis连接成功
+2025-11-01 17:20:40,971 - __main__ - INFO - 启动服务器，端口: 8000
+2025-11-01 17:20:40,985 - __main__ - INFO - 启动AutoClip API服务...
+2025-11-01 17:20:40,986 - __main__ - INFO - 数据库表创建完成
+2025-11-01 17:20:40,986 - __main__ - INFO - API密钥已加载到环境变量
+2025-11-01 17:20:40,986 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:20:40,986 - __main__ - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:20:40,987 - __main__ - INFO - WebSocket网关服务已禁用
+2025-11-01 17:21:00,168 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:21:00,431 - backend.services.simple_progress - INFO - Redis连接成功
+2025-11-01 17:21:00,527 - __main__ - INFO - 启动服务器，端口: 8001
+2025-11-01 17:21:00,541 - __main__ - INFO - 启动AutoClip API服务...
+2025-11-01 17:21:00,542 - __main__ - INFO - 数据库表创建完成
+2025-11-01 17:21:00,542 - __main__ - INFO - API密钥已加载到环境变量
+2025-11-01 17:21:00,542 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:22:00,021 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:22:00,022 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:22:00,022 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:22:00,022 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:22:10,149 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:22:10,149 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:22:10,149 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:23:01,394 - __main__ - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:23:01,402 - __main__ - INFO - WebSocket网关服务已禁用
+2025-11-01 17:23:19,988 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-01 17:23:19,988 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-01 17:27:30,436 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-01 17:27:30,757 - backend.services.simple_progress - INFO - Redis连接成功
+2025-11-01 17:27:30,844 - __main__ - INFO - 启动服务器，端口: 8000
+2025-11-01 17:27:30,870 - __main__ - INFO - 启动AutoClip API服务...
+2025-11-01 17:27:30,874 - __main__ - INFO - 数据库表创建完成
+2025-11-01 17:27:30,874 - __main__ - INFO - API密钥已加载到环境变量
+2025-11-01 17:27:30,874 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 17:28:20,194 - backend.core.llm_manager - ERROR - 初始化提供商失败: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:28:20,194 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:28:20,194 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:28:20,194 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:28:55,033 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:28:55,039 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:28:55,040 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:29:04,271 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:29:04,271 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:29:04,271 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:29:20,692 - backend.core.llm_manager - WARNING - 未找到minimax的API密钥
+2025-11-01 17:29:20,695 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:29:20,696 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:29:20,696 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:29:28,141 - backend.core.llm_manager - WARNING - 未找到minimax的API密钥
+2025-11-01 17:29:28,145 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 17:29:28,145 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 17:29:28,145 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 17:30:49,074 - backend.api.v1.projects - INFO - 开始为项目 3145e911-cb8a-4217-8402-909cfaf68684 生成缩略图...
+2025-11-01 17:30:49,481 - backend.utils.thumbnail_generator - INFO - 成功提取视频封面: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/input_cover.jpg
+2025-11-01 17:30:49,481 - backend.utils.thumbnail_generator - INFO - 使用视频封面作为缩略图: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/input_cover.jpg
+2025-11-01 17:30:49,481 - backend.utils.thumbnail_generator - INFO - 使用视频封面生成缩略图: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/input_cover.jpg -> /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/temp_thumbnail_input.jpg
+2025-11-01 17:30:49,481 - backend.utils.thumbnail_generator - INFO - 生成缩略图: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/input.mp4 -> /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/temp_thumbnail_input.jpg
+2025-11-01 17:30:50,034 - backend.utils.thumbnail_generator - ERROR - 缩略图生成失败: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.6)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mjpeg @ 0x12b6330d0] unable to decode APP fields: Invalid data found when processing input
+    Last message repeated 2 times
+[mjpeg @ 0x12b6330d0] No JPEG data found in image
+[image2 @ 0x12b6324c0] Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Input #0, image2, from '/Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/3145e911-cb8a-4217-8402-909cfaf68684/raw/input_cover.jpg':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: 7832 kb/s
+  Stream #0:0: Video: mjpeg, none(bt470bg/unknown/unknown), 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (mjpeg (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[mjpeg @ 0x12c906800] mjpeg: unsupported coding type (c8)
+[mjpeg @ 0x12c906800] unable to decode APP fields: Invalid data found when processing input
+    Last message repeated 1 times
+[mjpeg @ 0x12c906800] mjpeg: unsupported coding type (cd)
+[mjpeg @ 0x12c906800] mjpeg: unsupported coding type (cb)
+[mjpeg @ 0x12c906800] unable to decode APP fields: Invalid data found when processing input
+[mjpeg @ 0x12c906800] No JPEG data found in image
+[vist#0:0/mjpeg @ 0x12b704590] [dec:mjpeg @ 0x12c9058d0] Error submitting packet to decoder: Invalid data found when processing input
+[vist#0:0/mjpeg @ 0x12b704590] [dec:mjpeg @ 0x12c9058d0] Decode error rate 1 exceeds maximum 0.666667
+[vist#0:0/mjpeg @ 0x12b704590] [dec:mjpeg @ 0x12c9058d0] Task finished with error code: -1145393733 (Error number -1145393733 occurred)
+[vist#0:0/mjpeg @ 0x12b704590] [dec:mjpeg @ 0x12c9058d0] Terminating thread with return code -1145393733 (Error number -1145393733 occurred)
+Cannot determine format of input 0:0 after EOF
+[vf#0:0 @ 0x12b706160] Task finished with error code: -1094995529 (Invalid data found when processing input)
+[vf#0:0 @ 0x12b706160] Terminating thread with return code -1094995529 (Invalid data found when processing input)
+[vost#0:0/mjpeg @ 0x12b705510] Could not open encoder before EOF
+[vost#0:0/mjpeg @ 0x12b705510] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x12b705510] Terminating thread with return code -22 (Invalid argument)
+[out#0/image2 @ 0x12b704ba0] Nothing was written into output file, because at least one of its streams received no packets.
+frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A    
+Conversion failed!
 
-        Read more about it in the
-        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
-        
-  @app.on_event("startup")
-/Users/zhoukk/autoclip/backend/main.py:62: DeprecationWarning: 
-        on_event is deprecated, use lifespan event handlers instead.
+2025-11-01 17:30:50,034 - backend.api.v1.projects - WARNING - 项目 3145e911-cb8a-4217-8402-909cfaf68684 缩略图生成失败
+2025-11-01 17:30:50,086 - backend.api.v1.projects - INFO - 项目 3145e911-cb8a-4217-8402-909cfaf68684 异步处理任务已启动，Celery任务ID: 1cd9907c-e2b5-423c-90c5-ef508dee07cc
+2025-11-01 17:59:52,711 - backend.services.project_service - INFO - 开始删除项目 ee47fe57-b086-44d5-b562-d57fa4334682: [全场自录] 加木“嵌入生长”专辑试听会上海站 | 嘉宾马赫 K.zoom| 250905
+2025-11-01 17:59:52,723 - backend.services.project_service - INFO - 删除项目 ee47fe57-b086-44d5-b562-d57fa4334682 的 2 个任务
+2025-11-01 17:59:52,726 - backend.services.project_service - INFO - 删除项目 ee47fe57-b086-44d5-b562-d57fa4334682 的 33 个切片
+2025-11-01 17:59:52,726 - backend.services.project_service - INFO - 删除项目 ee47fe57-b086-44d5-b562-d57fa4334682 的 7 个合集
+2025-11-01 17:59:52,727 - backend.services.project_service - INFO - 删除项目 ee47fe57-b086-44d5-b562-d57fa4334682 记录
+2025-11-01 17:59:52,732 - backend.services.project_service - INFO - 删除项目目录: data/projects/ee47fe57-b086-44d5-b562-d57fa4334682
+2025-11-01 17:59:52,742 - backend.services.simple_progress - INFO - 已清除项目进度数据: ee47fe57-b086-44d5-b562-d57fa4334682
+2025-11-01 17:59:52,742 - backend.services.project_service - INFO - 清理项目 ee47fe57-b086-44d5-b562-d57fa4334682 的Redis进度数据
+2025-11-01 17:59:52,748 - backend.services.enhanced_progress_service - INFO - Redis连接成功
+2025-11-01 17:59:52,748 - backend.services.project_service - INFO - 项目 ee47fe57-b086-44d5-b562-d57fa4334682 删除成功
+2025-11-01 17:59:56,450 - backend.services.project_service - INFO - 开始删除项目 e555562f-812e-4449-a2b3-12d281c0e42c: 伯牙绝弦配方
+2025-11-01 17:59:56,451 - backend.services.project_service - INFO - 删除项目 e555562f-812e-4449-a2b3-12d281c0e42c 记录
+2025-11-01 17:59:56,460 - backend.services.project_service - INFO - 删除项目目录: data/projects/e555562f-812e-4449-a2b3-12d281c0e42c
+2025-11-01 17:59:56,462 - backend.services.simple_progress - INFO - 已清除项目进度数据: e555562f-812e-4449-a2b3-12d281c0e42c
+2025-11-01 17:59:56,462 - backend.services.project_service - INFO - 清理项目 e555562f-812e-4449-a2b3-12d281c0e42c 的Redis进度数据
+2025-11-01 17:59:56,462 - backend.services.project_service - INFO - 项目 e555562f-812e-4449-a2b3-12d281c0e42c 删除成功
+2025-11-01 17:59:58,784 - backend.services.project_service - INFO - 开始删除项目 e0dcf2a2-8505-42ef-9f28-e435d120ba51: 伯牙绝弦配方
+2025-11-01 17:59:58,785 - backend.services.project_service - INFO - 删除项目 e0dcf2a2-8505-42ef-9f28-e435d120ba51 记录
+2025-11-01 17:59:58,797 - backend.services.project_service - INFO - 删除项目目录: data/projects/e0dcf2a2-8505-42ef-9f28-e435d120ba51
+2025-11-01 17:59:58,799 - backend.services.simple_progress - INFO - 已清除项目进度数据: e0dcf2a2-8505-42ef-9f28-e435d120ba51
+2025-11-01 17:59:58,799 - backend.services.project_service - INFO - 清理项目 e0dcf2a2-8505-42ef-9f28-e435d120ba51 的Redis进度数据
+2025-11-01 17:59:58,799 - backend.services.project_service - INFO - 项目 e0dcf2a2-8505-42ef-9f28-e435d120ba51 删除成功
+2025-11-01 18:00:01,002 - backend.services.project_service - INFO - 开始删除项目 a5234008-cc7d-463b-a914-1641f038b9c2: 伯牙绝弦配方
+2025-11-01 18:00:01,012 - backend.services.project_service - INFO - 删除项目 a5234008-cc7d-463b-a914-1641f038b9c2 记录
+2025-11-01 18:00:01,013 - backend.services.project_service - INFO - 删除项目目录: data/projects/a5234008-cc7d-463b-a914-1641f038b9c2
+2025-11-01 18:00:01,016 - backend.services.simple_progress - INFO - 已清除项目进度数据: a5234008-cc7d-463b-a914-1641f038b9c2
+2025-11-01 18:00:01,016 - backend.services.project_service - INFO - 清理项目 a5234008-cc7d-463b-a914-1641f038b9c2 的Redis进度数据
+2025-11-01 18:00:01,016 - backend.services.project_service - INFO - 项目 a5234008-cc7d-463b-a914-1641f038b9c2 删除成功
+2025-11-01 18:00:54,909 - backend.services.project_service - INFO - 开始删除项目 3145e911-cb8a-4217-8402-909cfaf68684: 伯牙绝弦配方
+2025-11-01 18:00:54,913 - backend.services.project_service - INFO - 删除项目 3145e911-cb8a-4217-8402-909cfaf68684 记录
+2025-11-01 18:00:54,915 - backend.services.project_service - INFO - 删除项目目录: data/projects/3145e911-cb8a-4217-8402-909cfaf68684
+2025-11-01 18:00:54,917 - backend.services.simple_progress - INFO - 已清除项目进度数据: 3145e911-cb8a-4217-8402-909cfaf68684
+2025-11-01 18:00:54,917 - backend.services.project_service - INFO - 清理项目 3145e911-cb8a-4217-8402-909cfaf68684 的Redis进度数据
+2025-11-01 18:00:54,917 - backend.services.project_service - INFO - 项目 3145e911-cb8a-4217-8402-909cfaf68684 删除成功
+2025-11-01 18:02:26,012 - backend.services.project_service - INFO - 开始删除项目 caf5dd53-d921-4a68-853c-5d45f4a78054: 炸裂——主角瑞克和prime维度是朋友！姥爷要消灭所有平行宇宙了（瑞克和莫蒂官方漫画·瑞莫VS宇宙01）
+2025-11-01 18:02:26,023 - backend.services.project_service - INFO - 项目 caf5dd53-d921-4a68-853c-5d45f4a78054 已完成，但仍有 1 个标记为运行中的任务，将一并删除
+2025-11-01 18:02:26,025 - backend.services.project_service - INFO - 删除项目 caf5dd53-d921-4a68-853c-5d45f4a78054 的 2 个任务
+2025-11-01 18:02:26,026 - backend.services.project_service - INFO - 删除项目 caf5dd53-d921-4a68-853c-5d45f4a78054 的 7 个切片
+2025-11-01 18:02:26,029 - backend.services.project_service - INFO - 删除项目 caf5dd53-d921-4a68-853c-5d45f4a78054 的 1 个合集
+2025-11-01 18:02:26,031 - backend.services.project_service - INFO - 删除项目 caf5dd53-d921-4a68-853c-5d45f4a78054 记录
+2025-11-01 18:02:26,040 - backend.services.project_service - INFO - 项目目录不存在: data/projects/caf5dd53-d921-4a68-853c-5d45f4a78054
+2025-11-01 18:02:26,042 - backend.services.simple_progress - INFO - 已清除项目进度数据: caf5dd53-d921-4a68-853c-5d45f4a78054
+2025-11-01 18:02:26,042 - backend.services.project_service - INFO - 清理项目 caf5dd53-d921-4a68-853c-5d45f4a78054 的Redis进度数据
+2025-11-01 18:02:26,042 - backend.services.project_service - INFO - 项目 caf5dd53-d921-4a68-853c-5d45f4a78054 删除成功
+2025-11-01 18:10:19,281 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:10:19,290 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:10:19,290 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:12:57,464 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:12:57,470 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:12:57,470 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:13:13,811 - backend.core.llm_manager - WARNING - 未找到minimax的API密钥
+2025-11-01 18:13:13,814 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:13:13,815 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:13:13,815 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:13:27,483 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:13:27,493 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:13:27,496 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:13:40,747 - backend.core.llm_manager - WARNING - 未找到minimax的API密钥
+2025-11-01 18:13:40,751 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:13:40,751 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:13:40,751 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:13:56,711 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:13:56,717 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:13:56,718 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:24:06,662 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:24:06,663 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:24:06,663 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:24:08,782 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:24:08,782 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:24:08,782 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:24:58,615 - backend.api.v1.projects - INFO - 开始为项目 85e53dac-5141-4d56-b02d-3c3c15b25f8e 生成缩略图...
+2025-11-01 18:24:59,121 - backend.utils.thumbnail_generator - INFO - 成功提取视频封面: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/input_cover.jpg
+2025-11-01 18:24:59,121 - backend.utils.thumbnail_generator - INFO - 使用视频封面作为缩略图: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/input_cover.jpg
+2025-11-01 18:24:59,121 - backend.utils.thumbnail_generator - INFO - 使用视频封面生成缩略图: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/input_cover.jpg -> /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/temp_thumbnail_input.jpg
+2025-11-01 18:24:59,121 - backend.utils.thumbnail_generator - INFO - 生成缩略图: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/input.mp4 -> /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/temp_thumbnail_input.jpg
+2025-11-01 18:24:59,671 - backend.utils.thumbnail_generator - ERROR - 缩略图生成失败: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.6)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mjpeg @ 0x132631ff0] unable to decode APP fields: Invalid data found when processing input
+    Last message repeated 2 times
+[mjpeg @ 0x132631ff0] No JPEG data found in image
+[image2 @ 0x132706990] Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Input #0, image2, from '/Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/85e53dac-5141-4d56-b02d-3c3c15b25f8e/raw/input_cover.jpg':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: 7832 kb/s
+  Stream #0:0: Video: mjpeg, none(bt470bg/unknown/unknown), 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (mjpeg (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[mjpeg @ 0x132633560] mjpeg: unsupported coding type (c8)
+[mjpeg @ 0x132633560] unable to decode APP fields: Invalid data found when processing input
+    Last message repeated 1 times
+[mjpeg @ 0x132633560] mjpeg: unsupported coding type (cd)
+[mjpeg @ 0x132633560] mjpeg: unsupported coding type (cb)
+[mjpeg @ 0x132633560] unable to decode APP fields: Invalid data found when processing input
+[mjpeg @ 0x132633560] No JPEG data found in image
+[vist#0:0/mjpeg @ 0x1330047f0] [dec:mjpeg @ 0x1326321b0] Error submitting packet to decoder: Invalid data found when processing input
+[vist#0:0/mjpeg @ 0x1330047f0] [dec:mjpeg @ 0x1326321b0] Decode error rate 1 exceeds maximum 0.666667
+[vist#0:0/mjpeg @ 0x1330047f0] [dec:mjpeg @ 0x1326321b0] Task finished with error code: -1145393733 (Error number -1145393733 occurred)
+[vist#0:0/mjpeg @ 0x1330047f0] [dec:mjpeg @ 0x1326321b0] Terminating thread with return code -1145393733 (Error number -1145393733 occurred)
+Cannot determine format of input 0:0 after EOF
+[vf#0:0 @ 0x133005f40] Task finished with error code: -1094995529 (Invalid data found when processing input)
+[vf#0:0 @ 0x133005f40] Terminating thread with return code -1094995529 (Invalid data found when processing input)
+[vost#0:0/mjpeg @ 0x1330052d0] Could not open encoder before EOF
+[vost#0:0/mjpeg @ 0x1330052d0] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x1330052d0] Terminating thread with return code -22 (Invalid argument)
+[out#0/image2 @ 0x133004960] Nothing was written into output file, because at least one of its streams received no packets.
+frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A    
+Conversion failed!
 
-        Read more about it in the
-        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
-        
-  @app.on_event("shutdown")
-2025-09-15 15:22:22,253 - __main__ - INFO - 启动服务器，端口: 8000
-INFO:     Started server process [59441]
-INFO:     Waiting for application startup.
-2025-09-15 15:22:22,275 - __main__ - INFO - 启动AutoClip API服务...
-2025-09-15 15:22:22,278 - __main__ - INFO - 数据库表创建完成
-2025-09-15 15:22:22,278 - __main__ - INFO - API密钥已加载到环境变量
-2025-09-15 15:22:22,278 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-INFO:     Application startup complete.
-ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
-INFO:     Waiting for application shutdown.
-2025-09-15 15:22:22,279 - __main__ - INFO - 正在关闭AutoClip API服务...
-2025-09-15 15:22:22,279 - __main__ - INFO - WebSocket网关服务已禁用
-INFO:     Application shutdown complete.
-NFO - WebSocket网关服务已禁用
-2025-09-15 15:23:01,950 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 15:23:01,950 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 15:23:02,541 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 15:23:02,781 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 15:23:02,853 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 15:23:02,854 - backend.main - INFO - 数据库表创建完成
-2025-09-15 15:23:02,854 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 15:23:02,854 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 15:24:33,448 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 15:24:36,532 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 15:24:42,890 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 15:25:03,159 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 15:45:08,187 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 15:45:08,443 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 15:45:08,518 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 15:45:08,519 - backend.main - INFO - 数据库表创建完成
-2025-09-15 15:45:08,519 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 15:45:08,519 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 15:46:32,389 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 15:50:09,270 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 15:50:09,270 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 15:50:09,841 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 15:50:10,108 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 15:50:10,176 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 15:50:10,178 - backend.main - INFO - 数据库表创建完成
-2025-09-15 15:50:10,178 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 15:50:10,178 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 15:54:00,137 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 15:54:00,137 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 15:54:00,573 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 15:54:00,756 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 15:54:00,823 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 15:54:00,824 - backend.main - INFO - 数据库表创建完成
-2025-09-15 15:54:00,824 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 15:54:00,824 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 16:05:03,996 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 16:05:03,996 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 16:05:04,537 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 16:05:04,792 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 16:05:04,862 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 16:05:04,863 - backend.main - INFO - 数据库表创建完成
-2025-09-15 16:05:04,863 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 16:05:04,863 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 16:05:55,959 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 16:05:56,329 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 16:05:56,444 - __main__ - INFO - 启动服务器，端口: 8000
-2025-09-15 16:05:56,478 - __main__ - INFO - 启动AutoClip API服务...
-2025-09-15 16:05:56,482 - __main__ - INFO - 数据库表创建完成
-2025-09-15 16:05:56,482 - __main__ - INFO - API密钥已加载到环境变量
-2025-09-15 16:05:56,482 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 16:05:56,483 - __main__ - INFO - 正在关闭AutoClip API服务...
-2025-09-15 16:05:56,483 - __main__ - INFO - WebSocket网关服务已禁用
-2025-09-15 16:07:17,536 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 16:07:17,536 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 16:07:18,179 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 16:07:18,466 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 16:07:18,538 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 16:07:18,539 - backend.main - INFO - 数据库表创建完成
-2025-09-15 16:07:18,539 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 16:07:18,539 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 16:10:19,610 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 16:10:19,610 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 16:10:22,555 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 16:10:22,899 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 16:10:23,001 - __main__ - INFO - 启动服务器，端口: 8000
-2025-09-15 16:10:23,023 - __main__ - INFO - 启动AutoClip API服务...
-2025-09-15 16:10:23,026 - __main__ - INFO - 数据库表创建完成
-2025-09-15 16:10:23,026 - __main__ - INFO - API密钥已加载到环境变量
-2025-09-15 16:10:23,026 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 16:51:17,674 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 16:51:18,022 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 16:51:18,125 - __main__ - INFO - 启动服务器，端口: 8000
-2025-09-15 16:51:18,147 - __main__ - INFO - 启动AutoClip API服务...
-2025-09-15 16:51:18,149 - __main__ - INFO - 数据库表创建完成
-2025-09-15 16:51:18,149 - __main__ - INFO - API密钥已加载到环境变量
-2025-09-15 16:51:18,149 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 16:51:18,150 - __main__ - INFO - 正在关闭AutoClip API服务...
-2025-09-15 16:51:18,150 - __main__ - INFO - WebSocket网关服务已禁用
-2025-09-15 16:52:50,367 - __main__ - INFO - 正在关闭AutoClip API服务...
-2025-09-15 16:52:50,367 - __main__ - INFO - WebSocket网关服务已禁用
-2025-09-15 16:52:54,341 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 16:52:54,592 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 16:52:54,702 - __main__ - INFO - 启动服务器，端口: 8000
-2025-09-15 16:52:54,726 - __main__ - INFO - 启动AutoClip API服务...
-2025-09-15 16:52:54,732 - __main__ - INFO - 数据库表创建完成
-2025-09-15 16:52:54,733 - __main__ - INFO - API密钥已加载到环境变量
-2025-09-15 16:52:54,733 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 19:32:11,188 - __main__ - INFO - 正在关闭AutoClip API服务...
-2025-09-15 19:32:11,189 - __main__ - INFO - WebSocket网关服务已禁用
-2025-09-15 19:33:31,584 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 19:33:31,859 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 19:33:31,935 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 19:33:31,936 - backend.main - INFO - 数据库表创建完成
-2025-09-15 19:33:31,936 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 19:33:31,936 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 19:33:48,972 - backend.core.llm_manager - INFO - 已初始化dashscope提供商，模型: qwen-plus
-2025-09-15 20:19:52,449 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 20:26:48,205 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 20:26:48,206 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 20:26:48,851 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 20:26:49,103 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 20:26:49,174 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 20:26:49,175 - backend.main - INFO - 数据库表创建完成
-2025-09-15 20:26:49,175 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 20:26:49,175 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 20:26:55,341 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 20:26:55,341 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 20:26:55,844 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 20:26:56,041 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 20:26:56,111 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 20:26:56,112 - backend.main - INFO - 数据库表创建完成
-2025-09-15 20:26:56,112 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 20:26:56,112 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 20:27:05,918 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 20:27:05,918 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 20:27:06,434 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 20:27:06,631 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 20:27:06,700 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 20:27:06,701 - backend.main - INFO - 数据库表创建完成
-2025-09-15 20:27:06,701 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 20:27:06,701 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 20:29:47,869 - backend.api.v1.collections - ERROR - 生成合集标题失败: 'ClipRepository' object has no attribute 'get'
-2025-09-15 20:30:00,211 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 20:30:00,211 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 20:30:00,840 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 20:30:01,091 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 20:30:01,164 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 20:30:01,165 - backend.main - INFO - 数据库表创建完成
-2025-09-15 20:30:01,165 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 20:30:01,166 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 20:30:04,931 - backend.core.llm_manager - INFO - 已初始化dashscope提供商，模型: qwen-plus
-2025-09-15 20:30:30,747 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 20:30:30,747 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 20:30:31,383 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 20:30:31,593 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 20:30:31,665 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 20:30:31,666 - backend.main - INFO - 数据库表创建完成
-2025-09-15 20:30:31,666 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 20:30:31,666 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 20:37:07,166 - backend.core.llm_manager - INFO - 已初始化dashscope提供商，模型: qwen-plus
-2025-09-15 21:07:03,457 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 21:07:22,488 - backend.api.v1.projects - ERROR - 生成合集视频失败: clips_dir 参数是必需的，不能使用全局路径
-2025-09-15 21:08:14,336 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:08:14,336 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:08:15,084 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:08:15,361 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:08:15,440 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:08:15,441 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:08:15,441 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:08:15,441 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:09:12,455 - backend.utils.video_processor - INFO - 成功创建合集: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新.mp4
-2025-09-15 21:09:35,613 - backend.utils.video_processor - INFO - 成功创建合集: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/4a4c1bfd-bcaa-4533-997a-b69ea6196cf8_成长与自我探索.mp4
-2025-09-15 21:09:55,613 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:09:55,613 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:09:56,086 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:09:56,278 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:09:56,354 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:09:56,355 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:09:56,355 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:09:56,355 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:10:39,390 - backend.utils.video_processor - INFO - 成功创建合集: /Users/zhoukk/autoclip/data/projects/caf5dd53-d921-4a68-853c-5d45f4a78054/output/collections/202ff145-3f70-46d1-87fb-cac10dc76ac4_瑞克和莫蒂宇宙全解析从结构到设定一篇看懂.mp4
-2025-09-15 21:10:40,401 - backend.api.v1.projects - ERROR - 下载文件失败: 'latin-1' codec can't encode characters in position 29-48: ordinal not in range(256)
-2025-09-15 21:12:13,898 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:12:14,263 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:12:14,369 - __main__ - INFO - 启动服务器，端口: 8000
-2025-09-15 21:12:14,392 - __main__ - INFO - 启动AutoClip API服务...
-2025-09-15 21:12:14,395 - __main__ - INFO - 数据库表创建完成
-2025-09-15 21:12:14,395 - __main__ - INFO - API密钥已加载到环境变量
-2025-09-15 21:12:14,395 - __main__ - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:12:14,396 - __main__ - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:12:14,396 - __main__ - INFO - WebSocket网关服务已禁用
-2025-09-15 21:13:09,920 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:13:09,920 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:13:10,404 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:13:10,601 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:13:10,668 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:13:10,669 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:13:10,669 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:13:10,670 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:13:50,674 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:13:50,674 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:13:51,172 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:13:51,366 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:13:51,433 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:13:51,434 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:13:51,435 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:13:51,435 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:14:29,013 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:14:29,013 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:14:29,559 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:14:29,762 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:14:29,862 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:14:29,863 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:14:29,863 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:14:29,863 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:14:42,596 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:14:42,596 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:14:43,127 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:14:43,320 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:14:43,388 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:14:43,389 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:14:43,389 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:14:43,389 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:14:58,845 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:14:58,845 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:14:59,290 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:14:59,487 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:14:59,555 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:14:59,556 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:14:59,556 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:14:59,556 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:15:13,050 - backend.utils.video_processor - INFO - 成功创建合集: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新.mp4
-2025-09-15 21:15:13,248 - backend.utils.video_processor - INFO - 成功提取缩略图: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新_thumbnail.jpg
-2025-09-15 21:15:13,248 - backend.api.v1.projects - INFO - 合集封面生成成功: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新_thumbnail.jpg
-2025-09-15 21:17:17,505 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:17:17,505 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:17:17,905 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:17:18,095 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:17:18,161 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:17:18,162 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:17:18,162 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:17:18,162 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:29:01,880 - backend.utils.video_processor - INFO - 成功创建合集: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新.mp4
-2025-09-15 21:29:02,118 - backend.utils.video_processor - INFO - 成功提取缩略图: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新_thumbnail.jpg
-2025-09-15 21:29:02,119 - backend.api.v1.projects - INFO - 合集封面生成成功: /Users/zhoukk/autoclip/data/projects/ee47fe57-b086-44d5-b562-d57fa4334682/output/collections/def33196-e2f0-4e65-8789-37932bdb959f_测试标题更新_thumbnail.jpg
-2025-09-15 21:29:46,373 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:29:46,373 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:29:46,961 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:29:47,212 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:29:47,284 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:29:47,285 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:29:47,285 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:29:47,285 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:30:20,228 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:30:20,228 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:30:20,750 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:30:20,947 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:30:21,023 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:30:21,023 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:30:21,023 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:30:21,024 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:30:51,029 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:30:51,029 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:30:51,477 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:30:51,670 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:30:51,740 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:30:51,741 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:30:51,741 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:30:51,741 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:31:03,970 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:31:03,970 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:31:04,358 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:31:04,547 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:31:04,615 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:31:04,616 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:31:04,616 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:31:04,616 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:31:14,618 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:31:14,618 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:31:14,980 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:31:15,164 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:31:15,231 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:31:15,232 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:31:15,232 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:31:15,232 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 21:32:00,187 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 21:32:00,187 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 21:32:00,592 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 21:32:00,778 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 21:32:01,017 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 21:32:01,018 - backend.main - INFO - 数据库表创建完成
-2025-09-15 21:32:01,018 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 21:32:01,018 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 23:25:07,899 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 23:25:07,899 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 23:25:08,476 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 23:25:08,744 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 23:25:08,822 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 23:25:08,823 - backend.main - INFO - 数据库表创建完成
-2025-09-15 23:25:08,823 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 23:25:08,823 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
-2025-09-15 23:59:00,918 - backend.main - INFO - 正在关闭AutoClip API服务...
-2025-09-15 23:59:00,919 - backend.main - INFO - WebSocket网关服务已禁用
-2025-09-15 23:59:03,087 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
-2025-09-15 23:59:03,324 - backend.services.simple_progress - INFO - Redis连接成功
-2025-09-15 23:59:03,398 - backend.main - INFO - 启动AutoClip API服务...
-2025-09-15 23:59:03,399 - backend.main - INFO - 数据库表创建完成
-2025-09-15 23:59:03,399 - backend.main - INFO - API密钥已加载到环境变量
-2025-09-15 23:59:03,399 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-01 18:24:59,672 - backend.api.v1.projects - WARNING - 项目 85e53dac-5141-4d56-b02d-3c3c15b25f8e 缩略图生成失败
+2025-11-01 18:24:59,677 - backend.api.v1.projects - INFO - 项目 85e53dac-5141-4d56-b02d-3c3c15b25f8e 异步处理任务已启动，Celery任务ID: dbd99ab8-64c1-41f9-bd6b-2421d79af4e2
+2025-11-01 18:29:21,956 - backend.services.websocket_notification_service - INFO - 项目更新通知已发送: 85e53dac-5141-4d56-b02d-3c3c15b25f8e - processing
+2025-11-01 18:31:38,735 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:31:38,735 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:31:38,735 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:32:03,310 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:32:03,310 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:32:03,310 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:32:05,982 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:32:05,982 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:32:05,982 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:32:12,723 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:32:12,723 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:32:12,723 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:32:21,067 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:32:21,067 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:32:21,067 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:32:23,891 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:32:23,891 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:32:23,891 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:42:27,292 - backend.api.v1.bilibili - INFO - 开始解析B站视频: https://www.bilibili.com/video/BV1VmpezZEdx
+2025-11-01 18:42:28,304 - backend.api.v1.bilibili - INFO - 视频信息解析成功: 中外大模型混战! ？我训练了10个AI打CS，谁会赢？【图灵计划13】
+2025-11-01 18:42:51,915 - backend.api.v1.bilibili - INFO - 创建B站下载任务: https://www.bilibili.com/video/BV1VmpezZEdx
+2025-11-01 18:43:03,702 - backend.api.v1.bilibili - INFO - B站缩略图获取成功: 中外大模型混战! ？我训练了10个AI打CS，谁会赢？【图灵计划13】
+2025-11-01 18:43:03,726 - backend.api.v1.bilibili - INFO - 项目 0dfca153-f9f2-419a-8375-5663896d7dda 缩略图已设置
+2025-11-01 18:43:03,726 - backend.api.v1.bilibili - INFO - 项目已创建: 0dfca153-f9f2-419a-8375-5663896d7dda
+2025-11-01 18:43:03,729 - backend.api.v1.async_task_manager - INFO - 开始执行任务: bilibili_download_4396c527-6baa-4e2c-b94f-646066a6adef
+2025-11-01 18:43:03,730 - backend.api.v1.bilibili - INFO - 项目 0dfca153-f9f2-419a-8375-5663896d7dda 下载进度更新: 10.0% - 正在获取视频信息...
+2025-11-01 18:43:12,638 - backend.api.v1.bilibili - INFO - 项目 0dfca153-f9f2-419a-8375-5663896d7dda 下载进度更新: 30.0% - 正在下载视频...
+2025-11-01 18:43:33,435 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 中外大模型混战! ？我训练了10个AI打CS，谁会赢？【图灵计划13】
+2025-11-01 18:43:33,435 - backend.utils.bilibili_downloader - INFO - 重命名AI字幕文件: 中外大模型混战! ？我训练了10个AI打CS，谁会赢？【图灵计划13】.ai-zh.srt -> 中外大模型混战! ？我训练了10个AI打CS，谁会赢？【图灵计划13】.srt
+2025-11-01 18:43:33,435 - backend.utils.bilibili_downloader - INFO - 下载完成: 中外大模型混战! ？我训练了10个AI打CS，谁会赢？【图灵计划13】
+2025-11-01 18:43:33,437 - backend.api.v1.bilibili - INFO - 项目 0dfca153-f9f2-419a-8375-5663896d7dda 下载进度更新: 60.0% - 视频下载完成，正在处理字幕...
+2025-11-01 18:43:33,438 - backend.api.v1.bilibili - INFO - 视频文件已移动到: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/0dfca153-f9f2-419a-8375-5663896d7dda/raw/input.mp4
+2025-11-01 18:43:33,438 - backend.api.v1.bilibili - INFO - 字幕文件已移动到: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/0dfca153-f9f2-419a-8375-5663896d7dda/raw/input.srt
+2025-11-01 18:43:33,444 - backend.api.v1.bilibili - INFO - 项目 0dfca153-f9f2-419a-8375-5663896d7dda 下载进度更新: 100.0% - 下载完成，准备开始处理
+2025-11-01 18:43:33,445 - backend.api.v1.bilibili - INFO - B站下载任务完成: 4396c527-6baa-4e2c-b94f-646066a6adef, 项目ID: 0dfca153-f9f2-419a-8375-5663896d7dda
+2025-11-01 18:43:33,445 - backend.api.v1.bilibili - INFO - B站项目 0dfca153-f9f2-419a-8375-5663896d7dda 下载完成，等待自动化流水线启动
+2025-11-01 18:43:33,445 - backend.services.auto_pipeline_service - INFO - 自动启动项目流水线: 0dfca153-f9f2-419a-8375-5663896d7dda
+2025-11-01 18:43:33,449 - backend.services.auto_pipeline_service - INFO - 创建处理任务: 95e7b724-44ff-4d56-9dc4-7d24b18a2548
+2025-11-01 18:43:33,456 - backend.services.auto_pipeline_service - INFO - 项目 0dfca153-f9f2-419a-8375-5663896d7dda 状态已更新为处理中
+2025-11-01 18:43:33,458 - backend.services.progress_update_service - INFO - 开始监控任务进度: 95e7b724-44ff-4d56-9dc4-7d24b18a2548
+2025-11-01 18:43:33,458 - backend.services.auto_pipeline_service - INFO - 准备提交Celery任务: 0dfca153-f9f2-419a-8375-5663896d7dda
+2025-11-01 18:43:33,458 - backend.services.auto_pipeline_service - INFO - 视频文件: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/0dfca153-f9f2-419a-8375-5663896d7dda/raw/input.mp4
+2025-11-01 18:43:33,458 - backend.services.auto_pipeline_service - INFO - 字幕文件: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/0dfca153-f9f2-419a-8375-5663896d7dda/raw/input.srt
+2025-11-01 18:43:33,458 - backend.utils.task_submission_utils - INFO - 提交视频流水线任务: 0dfca153-f9f2-419a-8375-5663896d7dda
+2025-11-01 18:43:33,458 - backend.utils.task_submission_utils - INFO - 准备提交任务到队列...
+2025-11-01 18:43:33,458 - backend.utils.task_submission_utils - INFO - 任务名称: backend.tasks.processing.process_video_pipeline
+2025-11-01 18:43:33,458 - backend.utils.task_submission_utils - INFO - 任务参数: ['0dfca153-f9f2-419a-8375-5663896d7dda', '/Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/0dfca153-f9f2-419a-8375-5663896d7dda/raw/input.mp4', '/Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/0dfca153-f9f2-419a-8375-5663896d7dda/raw/input.srt']
+2025-11-01 18:43:33,459 - backend.utils.task_submission_utils - INFO - 视频流水线任务已提交: cbcde959-2b40-45cc-9a5e-a9c7e74018c3
+2025-11-01 18:43:33,461 - backend.utils.task_submission_utils - INFO - 任务状态: PENDING
+2025-11-01 18:43:33,462 - backend.utils.task_submission_utils - INFO - Redis队列长度: 0
+2025-11-01 18:43:33,462 - backend.services.auto_pipeline_service - INFO - Celery任务提交结果: {'success': True, 'task_id': 'cbcde959-2b40-45cc-9a5e-a9c7e74018c3', 'status': 'PENDING', 'message': '视频流水线任务已提交'}
+2025-11-01 18:43:33,462 - backend.services.auto_pipeline_service - INFO - Celery任务已提交: cbcde959-2b40-45cc-9a5e-a9c7e74018c3
+2025-11-01 18:43:33,463 - backend.api.v1.bilibili - INFO - B站项目 0dfca153-f9f2-419a-8375-5663896d7dda 自动化流水线已启动: {'status': 'started', 'message': '流水线处理已启动', 'project_id': '0dfca153-f9f2-419a-8375-5663896d7dda', 'task_id': '95e7b724-44ff-4d56-9dc4-7d24b18a2548', 'celery_task_id': 'cbcde959-2b40-45cc-9a5e-a9c7e74018c3'}
+2025-11-01 18:43:33,464 - backend.api.v1.async_task_manager - INFO - 任务完成: bilibili_download_4396c527-6baa-4e2c-b94f-646066a6adef
+2025-11-01 18:43:36,898 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:38,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:40,899 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:42,907 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:44,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:46,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:48,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:50,900 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:52,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:54,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:56,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:43:58,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:00,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:02,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:04,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:06,900 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:08,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:10,899 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:12,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:14,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:16,899 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:18,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:20,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:22,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:24,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:26,900 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:28,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:30,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:32,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:34,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:36,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:38,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:40,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:42,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:44,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:46,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:48,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:50,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:52,900 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:54,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:56,907 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:44:58,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:00,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:02,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:04,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:06,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:08,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:10,900 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:12,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:14,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:16,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:18,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:20,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:22,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:24,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:26,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:28,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:30,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:32,905 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:34,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:36,901 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:38,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:40,904 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:42,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:44,906 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:46,899 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:48,907 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:50,903 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:52,902 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:45:54,907 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-01 18:49:29,600 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:49:29,608 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:49:29,609 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 18:50:20,608 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 18:50:20,616 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 18:50:20,616 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-01 19:02:56,657 - backend.core.llm_providers - WARNING - 无法获取dashscope的模型列表: 请安装dashscope: pip install dashscope
+2025-11-01 19:02:56,668 - backend.core.llm_providers - WARNING - 无法获取openai的模型列表: 请安装openai: pip install openai
+2025-11-01 19:02:56,670 - backend.core.llm_providers - WARNING - 无法获取gemini的模型列表: 请安装google-generativeai: pip install google-generativeai
+2025-11-02 10:24:42,898 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-02 10:24:43,164 - backend.services.simple_progress - INFO - Redis连接成功
+2025-11-02 10:24:43,235 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-02 10:24:43,236 - backend.main - INFO - 数据库表创建完成
+2025-11-02 10:24:43,236 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-02 10:24:43,236 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-02 10:25:34,972 - backend.api.v1.bilibili - INFO - 开始解析B站视频: https://www.bilibili.com/video/BV1y3s6zeEzs/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=d78cfc5077cb7e624376d3e506ceb0bf
+2025-11-02 10:25:36,402 - backend.api.v1.bilibili - INFO - 视频信息解析成功: AI广告最强组合拳——Sora2+NanoBanana
+2025-11-02 10:26:00,995 - backend.api.v1.bilibili - INFO - 创建B站下载任务: https://www.bilibili.com/video/BV1y3s6zeEzs/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=d78cfc5077cb7e624376d3e506ceb0bf
+2025-11-02 10:26:02,469 - backend.api.v1.bilibili - INFO - B站缩略图获取成功: AI广告最强组合拳——Sora2+NanoBanana
+2025-11-02 10:26:02,498 - backend.api.v1.bilibili - INFO - 项目 25c7afef-948e-4d14-bb31-199cbde98932 缩略图已设置
+2025-11-02 10:26:02,499 - backend.api.v1.bilibili - INFO - 项目已创建: 25c7afef-948e-4d14-bb31-199cbde98932
+2025-11-02 10:26:02,501 - backend.api.v1.async_task_manager - INFO - 开始执行任务: bilibili_download_32d7b452-4a59-4b2b-ba01-e3b3536be274
+2025-11-02 10:26:02,504 - backend.api.v1.bilibili - INFO - 项目 25c7afef-948e-4d14-bb31-199cbde98932 下载进度更新: 10.0% - 正在获取视频信息...
+2025-11-02 10:26:03,525 - backend.api.v1.bilibili - INFO - 项目 25c7afef-948e-4d14-bb31-199cbde98932 下载进度更新: 30.0% - 正在下载视频...
+2025-11-02 10:26:08,463 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: AI广告最强组合拳——Sora2+NanoBanana
+2025-11-02 10:26:08,463 - backend.utils.bilibili_downloader - INFO - 重命名AI字幕文件: AI广告最强组合拳——Sora2+NanoBanana.ai-zh.srt -> AI广告最强组合拳——Sora2+NanoBanana.srt
+2025-11-02 10:26:08,463 - backend.utils.bilibili_downloader - INFO - 下载完成: AI广告最强组合拳——Sora2+NanoBanana
+2025-11-02 10:26:08,464 - backend.api.v1.bilibili - INFO - 项目 25c7afef-948e-4d14-bb31-199cbde98932 下载进度更新: 60.0% - 视频下载完成，正在处理字幕...
+2025-11-02 10:26:08,465 - backend.api.v1.bilibili - INFO - 视频文件已移动到: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/25c7afef-948e-4d14-bb31-199cbde98932/raw/input.mp4
+2025-11-02 10:26:08,465 - backend.api.v1.bilibili - INFO - 字幕文件已移动到: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/25c7afef-948e-4d14-bb31-199cbde98932/raw/input.srt
+2025-11-02 10:26:08,472 - backend.api.v1.bilibili - INFO - 项目 25c7afef-948e-4d14-bb31-199cbde98932 下载进度更新: 100.0% - 下载完成，准备开始处理
+2025-11-02 10:26:08,473 - backend.api.v1.bilibili - INFO - B站下载任务完成: 32d7b452-4a59-4b2b-ba01-e3b3536be274, 项目ID: 25c7afef-948e-4d14-bb31-199cbde98932
+2025-11-02 10:26:08,473 - backend.api.v1.bilibili - INFO - B站项目 25c7afef-948e-4d14-bb31-199cbde98932 下载完成，等待自动化流水线启动
+2025-11-02 10:26:08,473 - backend.services.auto_pipeline_service - INFO - 自动启动项目流水线: 25c7afef-948e-4d14-bb31-199cbde98932
+2025-11-02 10:26:08,478 - backend.services.auto_pipeline_service - INFO - 创建处理任务: a95dc056-c930-4c13-a2ae-69d1a00ed26e
+2025-11-02 10:26:08,483 - backend.services.auto_pipeline_service - INFO - 项目 25c7afef-948e-4d14-bb31-199cbde98932 状态已更新为处理中
+2025-11-02 10:26:08,485 - backend.services.progress_update_service - INFO - 开始监控任务进度: a95dc056-c930-4c13-a2ae-69d1a00ed26e
+2025-11-02 10:26:08,485 - backend.services.auto_pipeline_service - INFO - 准备提交Celery任务: 25c7afef-948e-4d14-bb31-199cbde98932
+2025-11-02 10:26:08,485 - backend.services.auto_pipeline_service - INFO - 视频文件: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/25c7afef-948e-4d14-bb31-199cbde98932/raw/input.mp4
+2025-11-02 10:26:08,485 - backend.services.auto_pipeline_service - INFO - 字幕文件: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/25c7afef-948e-4d14-bb31-199cbde98932/raw/input.srt
+2025-11-02 10:26:08,485 - backend.utils.task_submission_utils - INFO - 提交视频流水线任务: 25c7afef-948e-4d14-bb31-199cbde98932
+2025-11-02 10:26:08,485 - backend.utils.task_submission_utils - INFO - 准备提交任务到队列...
+2025-11-02 10:26:08,485 - backend.utils.task_submission_utils - INFO - 任务名称: backend.tasks.processing.process_video_pipeline
+2025-11-02 10:26:08,485 - backend.utils.task_submission_utils - INFO - 任务参数: ['25c7afef-948e-4d14-bb31-199cbde98932', '/Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/25c7afef-948e-4d14-bb31-199cbde98932/raw/input.mp4', '/Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/25c7afef-948e-4d14-bb31-199cbde98932/raw/input.srt']
+2025-11-02 10:26:08,517 - backend.utils.task_submission_utils - INFO - 视频流水线任务已提交: e1ff6313-b8c7-41a4-a58e-5a0d0abc9d91
+2025-11-02 10:26:08,518 - backend.utils.task_submission_utils - INFO - 任务状态: PENDING
+2025-11-02 10:26:08,519 - backend.utils.task_submission_utils - INFO - Redis队列长度: 0
+2025-11-02 10:26:08,519 - backend.services.auto_pipeline_service - INFO - Celery任务提交结果: {'success': True, 'task_id': 'e1ff6313-b8c7-41a4-a58e-5a0d0abc9d91', 'status': 'PENDING', 'message': '视频流水线任务已提交'}
+2025-11-02 10:26:08,519 - backend.services.auto_pipeline_service - INFO - Celery任务已提交: e1ff6313-b8c7-41a4-a58e-5a0d0abc9d91
+2025-11-02 10:26:08,520 - backend.api.v1.bilibili - INFO - B站项目 25c7afef-948e-4d14-bb31-199cbde98932 自动化流水线已启动: {'status': 'started', 'message': '流水线处理已启动', 'project_id': '25c7afef-948e-4d14-bb31-199cbde98932', 'task_id': 'a95dc056-c930-4c13-a2ae-69d1a00ed26e', 'celery_task_id': 'e1ff6313-b8c7-41a4-a58e-5a0d0abc9d91'}
+2025-11-02 10:26:08,520 - backend.api.v1.async_task_manager - INFO - 任务完成: bilibili_download_32d7b452-4a59-4b2b-ba01-e3b3536be274
+2025-11-02 10:26:14,821 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:16,845 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:18,943 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:21,019 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:23,114 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:25,214 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:27,216 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:38,663 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:26:55,985 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:27:06,478 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:27:47,783 - backend.api.v1.simple_progress - INFO - 获取进度快照: 1 个项目
+2025-11-02 10:34:08,709 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-02 10:34:08,716 - backend.main - INFO - WebSocket网关服务已禁用
+2025-11-02 16:02:33,019 - backend.services.processing_orchestrator - INFO - 流水线模块导入成功
+2025-11-02 16:02:33,259 - backend.services.simple_progress - INFO - Redis连接成功
+2025-11-02 16:02:33,337 - backend.main - INFO - 启动AutoClip API服务...
+2025-11-02 16:02:33,338 - backend.main - INFO - 数据库表创建完成
+2025-11-02 16:02:33,338 - backend.main - INFO - API密钥已加载到环境变量
+2025-11-02 16:02:33,338 - backend.main - INFO - WebSocket网关服务已禁用，使用新的简化进度系统
+2025-11-02 16:02:38,863 - backend.api.v1.bilibili - INFO - 开始解析B站视频: https://www.bilibili.com/video/BV1pXy8BvE6o/?spm_id_from=333.337.search-card.all.click&vd_source=d78cfc5077cb7e624376d3e506ceb0bf
+2025-11-02 16:02:39,816 - backend.api.v1.bilibili - INFO - 视频信息解析成功: 辣椒炒蛋
+2025-11-02 16:02:50,064 - backend.api.v1.bilibili - INFO - 创建B站下载任务: https://www.bilibili.com/video/BV1pXy8BvE6o/?spm_id_from=333.337.search-card.all.click&vd_source=d78cfc5077cb7e624376d3e506ceb0bf
+2025-11-02 16:02:50,827 - backend.api.v1.bilibili - INFO - B站缩略图获取成功: 辣椒炒蛋
+2025-11-02 16:02:50,857 - backend.api.v1.bilibili - INFO - 项目 d7881b59-bb2f-4087-ab8e-0e39049e5bc1 缩略图已设置
+2025-11-02 16:02:50,857 - backend.api.v1.bilibili - INFO - 项目已创建: d7881b59-bb2f-4087-ab8e-0e39049e5bc1
+2025-11-02 16:02:50,859 - backend.api.v1.async_task_manager - INFO - 开始执行任务: bilibili_download_28af75f8-be24-4304-96e0-4fe89aa352d5
+2025-11-02 16:02:50,861 - backend.api.v1.bilibili - INFO - 项目 d7881b59-bb2f-4087-ab8e-0e39049e5bc1 下载进度更新: 10.0% - 正在获取视频信息...
+2025-11-02 16:02:51,554 - backend.api.v1.bilibili - INFO - 项目 d7881b59-bb2f-4087-ab8e-0e39049e5bc1 下载进度更新: 30.0% - 正在下载视频...
+2025-11-02 16:02:57,456 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 辣椒炒蛋
+2025-11-02 16:02:57,456 - backend.utils.bilibili_downloader - WARNING - 未找到字幕文件，标题: 辣椒炒蛋
+2025-11-02 16:02:57,456 - backend.utils.bilibili_downloader - INFO - 第一次字幕下载失败，尝试备用策略...
+2025-11-02 16:02:57,456 - backend.utils.bilibili_downloader - INFO - 尝试下载不同语言的字幕...
+2025-11-02 16:02:58,244 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:02:58,244 - backend.utils.bilibili_downloader - WARNING - 未找到字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:02:59,011 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:02:59,012 - backend.utils.bilibili_downloader - WARNING - 未找到字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:02:59,827 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:02:59,827 - backend.utils.bilibili_downloader - WARNING - 未找到字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:03:00,648 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:03:00,649 - backend.utils.bilibili_downloader - WARNING - 未找到字幕文件，标题: 辣椒炒蛋_sub
+2025-11-02 16:03:00,649 - backend.utils.bilibili_downloader - INFO - 尝试不使用cookies下载字幕...
+2025-11-02 16:03:01,524 - backend.utils.bilibili_downloader - INFO - 正在查找字幕文件，标题: 辣椒炒蛋_nocookie
+2025-11-02 16:03:01,524 - backend.utils.bilibili_downloader - WARNING - 未找到字幕文件，标题: 辣椒炒蛋_nocookie
+2025-11-02 16:03:01,525 - backend.utils.bilibili_downloader - INFO - 尝试从视频元数据提取字幕信息...
+2025-11-02 16:03:02,206 - backend.utils.bilibili_downloader - WARNING - 所有字幕获取策略都失败了
+2025-11-02 16:03:02,206 - backend.utils.bilibili_downloader - INFO - 下载完成: 辣椒炒蛋
+2025-11-02 16:03:02,209 - backend.api.v1.bilibili - INFO - 项目 d7881b59-bb2f-4087-ab8e-0e39049e5bc1 下载进度更新: 60.0% - 视频下载完成，正在处理字幕...
+2025-11-02 16:03:02,209 - backend.api.v1.bilibili - INFO - 优先使用Whisper生成高质量字幕
+2025-11-02 16:03:02,210 - backend.api.v1.bilibili - INFO - 项目 d7881b59-bb2f-4087-ab8e-0e39049e5bc1 下载进度更新: 70.0% - 正在使用Whisper生成字幕...
+2025-11-02 16:03:02,210 - backend.api.v1.bilibili - INFO - 使用Whisper生成字幕 - 语言: auto, 模型: base
+2025-11-02 16:03:02,218 - backend.utils.speech_recognizer - WARNING - 本地Whisper未安装或不可用
+2025-11-02 16:03:02,218 - backend.utils.speech_recognizer - INFO - 开始使用bcut-asr生成字幕: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/temp/辣椒炒蛋.mp4
+2025-11-02 16:03:02,261 - backend.utils.speech_recognizer - INFO - 正在从视频提取音频: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/temp/辣椒炒蛋.mp4 -> /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/temp/辣椒炒蛋_audio.wav
+2025-11-02 16:03:02,333 - backend.utils.speech_recognizer - INFO - 音频提取成功: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/temp/辣椒炒蛋_audio.wav
+2025-11-02 16:03:02,334 - root - INFO - 加载文件成功: 辣椒炒蛋_audio.wav
+2025-11-02 16:03:02,334 - backend.utils.speech_recognizer - INFO - 正在上传文件到bcut-asr...
+2025-11-02 16:03:02,720 - backend.utils.speech_recognizer - ERROR - bcut-asr生成字幕时发生错误: 412 Client Error: Precondition Failed for url: https://member.bilibili.com/x/bcut/rubick-interface/resource/create
+可能的原因:
+1. 网络连接问题
+2. 文件格式不支持
+3. 文件过大
+4. bcut-asr服务暂时不可用
+2025-11-02 16:03:02,720 - backend.api.v1.bilibili - ERROR - Whisper字幕生成失败: bcut-asr生成字幕时发生错误: 412 Client Error: Precondition Failed for url: https://member.bilibili.com/x/bcut/rubick-interface/resource/create
+可能的原因:
+1. 网络连接问题
+2. 文件格式不支持
+3. 文件过大
+4. bcut-asr服务暂时不可用
+2025-11-02 16:03:02,720 - backend.api.v1.bilibili - ERROR - 字幕文件不存在且Whisper生成失败，项目将标记为失败状态
+2025-11-02 16:03:02,726 - backend.api.v1.bilibili - INFO - 视频文件已移动到: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/d7881b59-bb2f-4087-ab8e-0e39049e5bc1/raw/input.mp4
+2025-11-02 16:03:02,740 - backend.api.v1.bilibili - ERROR - 字幕文件不存在: /Volumes/Plus7100/workspaces/caijx/python_projects/autoclip/data/projects/d7881b59-bb2f-4087-ab8e-0e39049e5bc1/raw/input.srt，项目将标记为失败状态
+2025-11-02 16:03:02,747 - backend.api.v1.bilibili - INFO - 项目 d7881b59-bb2f-4087-ab8e-0e39049e5bc1 下载进度更新: 0.0% - 下载失败：字幕文件不存在
+2025-11-02 16:03:02,748 - backend.api.v1.bilibili - INFO - B站下载任务失败: 28af75f8-be24-4304-96e0-4fe89aa352d5, 项目ID: d7881b59-bb2f-4087-ab8e-0e39049e5bc1, 原因: 字幕文件不存在
+2025-11-02 16:03:02,748 - backend.api.v1.async_task_manager - INFO - 任务完成: bilibili_download_28af75f8-be24-4304-96e0-4fe89aa352d5
+2025-11-02 21:11:53,994 - backend.main - INFO - 正在关闭AutoClip API服务...
+2025-11-02 21:11:53,994 - backend.main - INFO - WebSocket网关服务已禁用

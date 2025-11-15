@@ -1,6 +1,11 @@
 {
+  "llm_provider": "minimax",
   "dashscope_api_key": "sk-1280fee632a541c1a69d3873f850358b",
-  "model_name": "qwen-plus",
+  "openai_api_key": "",
+  "gemini_api_key": "AIzaSyA3MH9gxpyBr44pRTQ_MThrbFxlU-EXTF8",
+  "siliconflow_api_key": "",
+  "minimax_api_key":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiLolKHlrrbovpsiLCJVc2VyTmFtZSI6IuiUoeWutui-myIsIkFjY291bnQiOiIiLCJTdWJqZWN0SUQiOiIxOTQ0MzY0NDkyMDAzNDgwMDA0IiwiUGhvbmUiOiIxMzc3OTkzNTUxMCIsIkdyb3VwSUQiOiIxOTQ0MzY0NDkxOTk5Mjg1NjkxIiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoiIiwiQ3JlYXRlVGltZSI6IjIwMjUtMTEtMDEgMTY6NDg6MzEiLCJUb2tlblR5cGUiOjEsImlzcyI6Im1pbmltYXgifQ.jsg0OkHSq_O1YUmVd3yTJPjk5rsr3COqCNFh5yStngci0s1J2pTUoSV-13MOqBS9lvFJKjegumQ-T7cQ9J3mctmvQ7r4By_ySVK_fpNencMkpv-CdwPJbjRleiHToTLZjeaHep_MbpRcfr0mNh6CjmBLcRUGbptZIhg7Tm4S9_lUq3ZJGyGlyXy9OvaL2zfrtq-gerCGHZONyzw-F15hUdLbrhwgXOly_WxFqCx5_5LmXtErEYAVCkaXlQXrV-JeNxhc8gf0f1IAtD1J5aaOKTpx8BADKPuL9tJKT-uqm2GnvsM1202xnyW2JR2OjBzfTzVB134ZqrUljO4NT00ADw",
+  "model_name": "MiniMax-M2",
   "chunk_size": 5000,
   "min_score_threshold": 0.7,
   "max_clips_per_collection": 5

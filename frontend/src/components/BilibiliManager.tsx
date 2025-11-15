@@ -7,7 +7,7 @@ import './BilibiliManager.css'
 const { TextArea } = Input
 const { Text } = Typography
 const { Option } = Select
-const { TabPane } = Tabs
+// 移除TabPane解构，使用items属性
 
 interface BilibiliManagerProps {
   visible: boolean
@@ -493,7 +493,7 @@ const BilibiliManager: React.FC<BilibiliManagerProps> = ({
       onCancel={onClose}
       footer={null}
       width={800}
-      destroyOnClose
+      destroyOnHidden
       className="bilibili-manager-modal"
     >
       {/* 自定义标题栏 */}
@@ -513,250 +513,253 @@ const BilibiliManager: React.FC<BilibiliManagerProps> = ({
       </div>
 
       <div className="bilibili-manager-tabs">
-        <Tabs activeKey={activeTab} onChange={setActiveTab}>
-        {/* 上传标签页 */}
-        {clipIds.length > 0 && (
-          <TabPane 
-            tab={
-              <span>
-                <UploadOutlined />
-                投稿上传
-              </span>
-            } 
-            key="upload"
-          >
-            <div className="bilibili-manager-content">
-              <Alert
-                message="投稿信息"
-                description={`准备上传 ${clipIds.length} 个切片到B站`}
-                type="info"
-                showIcon
-                style={{ marginBottom: 16 }}
-              />
+        <Tabs 
+          activeKey={activeTab} 
+          onChange={setActiveTab}
+          items={[
+            // 上传标签页 - 仅在有clipIds时显示
+            ...(clipIds.length > 0 ? [{
+              key: 'upload',
+              label: (
+                <span>
+                  <UploadOutlined />
+                  投稿上传
+                </span>
+              ),
+              children: (
+                <div className="bilibili-manager-content">
+                  <Alert
+                    message="投稿信息"
+                    description={`准备上传 ${clipIds.length} 个切片到B站`}
+                    type="info"
+                    showIcon
+                    style={{ marginBottom: 16 }}
+                  />
 
-              <Form
-              form={uploadForm}
-              onFinish={handleUpload}
-              layout="vertical"
-              initialValues={{
-                title: clipTitles.length === 1 ? clipTitles[0] : `${clipTitles[0]} 等${clipIds.length}个视频`,
-                partition_id: 4 // 默认游戏分区
-              }}
-            >
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Form.Item
-                    label="选择账号"
-                    name="account_id"
-                    rules={[{ required: true, message: '请选择B站账号' }]}
+                  <Form
+                    form={uploadForm}
+                    onFinish={handleUpload}
+                    layout="vertical"
+                    initialValues={{
+                      title: clipTitles.length === 1 ? clipTitles[0] : `${clipTitles[0]} 等${clipIds.length}个视频`,
+                      partition_id: 4 // 默认游戏分区
+                    }}
                   >
-                    <Select 
-                      placeholder="选择要使用的B站账号"
-                      notFoundContent={
-                        <div style={{ textAlign: 'center', padding: '20px' }}>
-                          <p>暂无可用账号</p>
-                          <Button 
-                            type="link" 
-                            icon={<PlusOutlined />}
-                            onClick={() => setShowAddAccount(true)}
+                    <Row gutter={16}>
+                      <Col span={12}>
+                        <Form.Item
+                          label="选择账号"
+                          name="account_id"
+                          rules={[{ required: true, message: '请选择B站账号' }]}
+                        >
+                          <Select 
+                            placeholder="选择要使用的B站账号"
+                            notFoundContent={
+                              <div style={{ textAlign: 'center', padding: '20px' }}>
+                                <p>暂无可用账号</p>
+                                <Button 
+                                  type="link" 
+                                  icon={<PlusOutlined />}
+                                  onClick={() => setShowAddAccount(true)}
+                                >
+                                  添加账号
+                                </Button>
+                              </div>
+                            }
                           >
-                            添加账号
-                          </Button>
-                        </div>
-                      }
+                            {accounts.filter(acc => acc.status === 'active').map(account => (
+                              <Option key={account.id} value={account.id}>
+                                {account.nickname || account.username}
+                              </Option>
+                            ))}
+                          </Select>
+                        </Form.Item>
+                      </Col>
+                      <Col span={12}>
+                        <Form.Item
+                          label="视频分区"
+                          name="partition_id"
+                          rules={[{ required: true, message: '请选择视频分区' }]}
+                        >
+                          <Select placeholder="选择视频分区" showSearch>
+                            {BILIBILI_PARTITIONS.map(partition => (
+                              <Option key={partition.id} value={partition.id}>
+                                {partition.name}
+                              </Option>
+                            ))}
+                          </Select>
+                        </Form.Item>
+                      </Col>
+                    </Row>
+
+                    <Form.Item
+                      label="标题"
+                      name="title"
+                      rules={[{ required: true, message: '请输入视频标题' }]}
                     >
-                      {accounts.filter(acc => acc.status === 'active').map(account => (
-                        <Option key={account.id} value={account.id}>
-                          {account.nickname || account.username}
-                        </Option>
-                      ))}
-                    </Select>
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item
-                    label="视频分区"
-                    name="partition_id"
-                    rules={[{ required: true, message: '请选择视频分区' }]}
-                  >
-                    <Select placeholder="选择视频分区" showSearch>
-                      {BILIBILI_PARTITIONS.map(partition => (
-                        <Option key={partition.id} value={partition.id}>
-                          {partition.name}
-                        </Option>
-                      ))}
-                    </Select>
-                  </Form.Item>
-                </Col>
-              </Row>
+                      <Input placeholder="输入视频标题" maxLength={80} showCount />
+                    </Form.Item>
 
-              <Form.Item
-                label="标题"
-                name="title"
-                rules={[{ required: true, message: '请输入视频标题' }]}
-              >
-                <Input placeholder="输入视频标题" maxLength={80} showCount />
-              </Form.Item>
-
-              <Form.Item
-                label="描述"
-                name="description"
-              >
-                <TextArea
-                  placeholder="输入视频描述（可选）"
-                  rows={3}
-                  maxLength={2000}
-                  showCount
-                />
-              </Form.Item>
-
-              <Form.Item
-                label="标签"
-                name="tags"
-              >
-                <Input placeholder="输入标签，用逗号分隔（可选）" />
-              </Form.Item>
-
-              <Form.Item>
-                <Space>
-                  <Button 
-                    type="primary" 
-                    onClick={() => message.info('开发中，敬请期待', 3)}
-                    icon={<UploadOutlined />}
-                  >
-                    开始投稿
-                  </Button>
-                  <Button onClick={onClose}>
-                    取消
-                  </Button>
-                </Space>
-              </Form.Item>
-              </Form>
-            </div>
-          </TabPane>
-        )}
-
-        {/* 账号管理标签页 */}
-        <TabPane 
-          tab={
-            <span>
-              <UserOutlined />
-              账号管理
-            </span>
-          } 
-          key="accounts"
-        >
-          <div className="bilibili-manager-content">
-            <div style={{ marginBottom: 16 }}>
-              <Button 
-                type="primary" 
-                icon={<PlusOutlined />} 
-                onClick={() => setShowAddAccount(true)}
-              >
-                添加账号
-              </Button>
-            </div>
-
-            <Table
-              columns={accountColumns}
-              dataSource={accounts}
-              rowKey="id"
-              loading={loading}
-              pagination={false}
-              size="small"
-            />
-          </div>
-        </TabPane>
-
-        {/* 投稿状态标签页 */}
-        <TabPane 
-          tab={
-            <span>
-              <ReloadOutlined />
-              投稿状态
-            </span>
-          } 
-          key="status"
-        >
-          <div className="bilibili-manager-content">
-            <div style={{ marginBottom: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h3 style={{ margin: 0, color: '#ffffff' }}>投稿任务状态</h3>
-              <Button 
-                type="primary" 
-                icon={<ReloadOutlined />} 
-                onClick={fetchUploadRecords}
-                loading={recordsLoading}
-              >
-                刷新
-              </Button>
-            </div>
-
-            {/* 统计信息 */}
-            {(() => {
-              const stats = getStatistics()
-              return (
-                <Row gutter={16} style={{ marginBottom: 24 }}>
-                  <Col span={6}>
-                    <Card style={{ background: '#262626', border: '1px solid #404040' }}>
-                      <Statistic 
-                        title={<span style={{ color: '#ffffff' }}>总任务数</span>} 
-                        value={stats.total} 
-                        valueStyle={{ color: '#ffffff' }} 
+                    <Form.Item
+                      label="描述"
+                      name="description"
+                    >
+                      <TextArea
+                        placeholder="输入视频描述（可选）"
+                        rows={3}
+                        maxLength={2000}
+                        showCount
                       />
-                    </Card>
-                  </Col>
-                  <Col span={6}>
-                    <Card style={{ background: '#262626', border: '1px solid #404040' }}>
-                      <Statistic 
-                        title={<span style={{ color: '#ffffff' }}>成功</span>} 
-                        value={stats.success} 
-                        valueStyle={{ color: '#52c41a' }}
-                        prefix={<CheckCircleOutlined />}
-                      />
-                    </Card>
-                  </Col>
-                  <Col span={6}>
-                    <Card style={{ background: '#262626', border: '1px solid #404040' }}>
-                      <Statistic 
-                        title={<span style={{ color: '#ffffff' }}>失败</span>} 
-                        value={stats.failed} 
-                        valueStyle={{ color: '#ff4d4f' }}
-                        prefix={<ExclamationCircleOutlined />}
-                      />
-                    </Card>
-                  </Col>
-                  <Col span={6}>
-                    <Card style={{ background: '#262626', border: '1px solid #404040' }}>
-                      <Statistic 
-                        title={<span style={{ color: '#ffffff' }}>进行中</span>} 
-                        value={stats.processing + stats.pending} 
-                        valueStyle={{ color: '#1890ff' }}
-                        prefix={<PlayCircleOutlined />}
-                      />
-                    </Card>
-                  </Col>
-                </Row>
+                    </Form.Item>
+
+                    <Form.Item
+                      label="标签"
+                      name="tags"
+                    >
+                      <Input placeholder="输入标签，用逗号分隔（可选）" />
+                    </Form.Item>
+
+                    <Form.Item>
+                      <Space>
+                        <Button 
+                          type="primary" 
+                          onClick={() => message.info('开发中，敬请期待', 3)}
+                          icon={<UploadOutlined />}
+                        >
+                          开始投稿
+                        </Button>
+                        <Button onClick={onClose}>
+                          取消
+                        </Button>
+                      </Space>
+                    </Form.Item>
+                  </Form>
+                </div>
               )
-            })()}
+            }] : []),
+            // 账号管理标签页
+            {
+              key: 'accounts',
+              label: (
+                <span>
+                  <UserOutlined />
+                  账号管理
+                </span>
+              ),
+              children: (
+                <div className="bilibili-manager-content">
+                  <div style={{ marginBottom: 16 }}>
+                    <Button 
+                      type="primary" 
+                      icon={<PlusOutlined />} 
+                      onClick={() => setShowAddAccount(true)}
+                    >
+                      添加账号
+                    </Button>
+                  </div>
 
-            {/* 任务列表 */}
-            <Table
-              columns={uploadStatusColumns}
-              dataSource={uploadRecords}
-              rowKey="id"
-              loading={recordsLoading}
-              pagination={{
-                pageSize: 10,
-                showSizeChanger: true,
-                showQuickJumper: true,
-                showTotal: (total, range) => `第 ${range[0]}-${range[1]} 条，共 ${total} 条`
-              }}
-              scroll={{ x: 1200 }}
-              size="small"
-            />
-          </div>
-        </TabPane>
-      </Tabs>
+                  <Table
+                    columns={accountColumns}
+                    dataSource={accounts}
+                    rowKey="id"
+                    loading={loading}
+                    pagination={false}
+                    size="small"
+                  />
+                </div>
+              )
+            },
+            // 投稿状态标签页
+            {
+              key: 'status',
+              label: (
+                <span>
+                  <ReloadOutlined />
+                  投稿状态
+                </span>
+              ),
+              children: (
+                <div className="bilibili-manager-content">
+                  <div style={{ marginBottom: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <h3 style={{ margin: 0, color: '#ffffff' }}>投稿任务状态</h3>
+                    <Button 
+                      type="primary" 
+                      icon={<ReloadOutlined />} 
+                      onClick={fetchUploadRecords}
+                      loading={recordsLoading}
+                    >
+                      刷新
+                    </Button>
+                  </div>
+
+                  {/* 统计信息 */}
+                  {(() => {
+                    const stats = getStatistics()
+                    return (
+                      <Row gutter={16} style={{ marginBottom: 24 }}>
+                        <Col span={6}>
+                          <Card style={{ background: '#262626', border: '1px solid #404040' }}>
+                            <Statistic 
+                              title={<span style={{ color: '#ffffff' }}>总任务数</span>} 
+                              value={stats.total} 
+                              valueStyle={{ color: '#ffffff' }} 
+                            />
+                          </Card>
+                        </Col>
+                        <Col span={6}>
+                          <Card style={{ background: '#262626', border: '1px solid #404040' }}>
+                            <Statistic 
+                              title={<span style={{ color: '#ffffff' }}>成功</span>} 
+                              value={stats.success} 
+                              valueStyle={{ color: '#52c41a' }}
+                              prefix={<CheckCircleOutlined />}
+                            />
+                          </Card>
+                        </Col>
+                        <Col span={6}>
+                          <Card style={{ background: '#262626', border: '1px solid #404040' }}>
+                            <Statistic 
+                              title={<span style={{ color: '#ffffff' }}>失败</span>} 
+                              value={stats.failed} 
+                              valueStyle={{ color: '#ff4d4f' }}
+                              prefix={<ExclamationCircleOutlined />}
+                            />
+                          </Card>
+                        </Col>
+                        <Col span={6}>
+                          <Card style={{ background: '#262626', border: '1px solid #404040' }}>
+                            <Statistic 
+                              title={<span style={{ color: '#ffffff' }}>进行中</span>} 
+                              value={stats.processing + stats.pending} 
+                              valueStyle={{ color: '#1890ff' }}
+                              prefix={<PlayCircleOutlined />}
+                            />
+                          </Card>
+                        </Col>
+                      </Row>
+                    )
+                  })()}
+
+                  {/* 任务列表 */}
+                  <Table
+                    columns={uploadStatusColumns}
+                    dataSource={uploadRecords}
+                    rowKey="id"
+                    loading={recordsLoading}
+                    pagination={{
+                      pageSize: 10,
+                      showSizeChanger: true,
+                      showQuickJumper: true,
+                      showTotal: (total, range) => `第 ${range[0]}-${range[1]} 条，共 ${total} 条`
+                    }}
+                    scroll={{ x: 1200 }}
+                    size="small"
+                  />
+                </div>
+              )
+            }
+          ]}
+        />
       </div>
 
       {/* 添加账号弹窗 */}

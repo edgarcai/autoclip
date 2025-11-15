@@ -481,7 +481,7 @@ const ClipCard: React.FC<ClipCardProps> = ({
         ]}
         width={800}
         centered
-        destroyOnClose
+        destroyOnHidden
         styles={{
           header: {
             borderBottom: '1px solid #303030',

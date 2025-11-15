@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Card, Tag, Button, Space, Typography, Progress, Popconfirm, message, Tooltip } from 'antd'
-import { PlayCircleOutlined, DeleteOutlined, EyeOutlined, DownloadOutlined, ReloadOutlined, LoadingOutlined } from '@ant-design/icons'
+import { Card, Tag, Button, Space, Typography, Popconfirm, message, Tooltip } from 'antd'
+import { PlayCircleOutlined, DeleteOutlined, DownloadOutlined, ReloadOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { Project } from '../store/useProjectStore'
 import { projectApi } from '../services/api'
@@ -47,8 +47,7 @@ if (typeof document !== 'undefined') {
   document.head.appendChild(style)
 }
 
-const { Text, Title } = Typography
-const { Meta } = Card
+const { Text } = Typography
 
 interface ProjectCardProps {
   project: Project
@@ -70,7 +69,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onDelete, onRetry, o
   const [thumbnailLoading, setThumbnailLoading] = useState(false)
   const [isRetrying, setIsRetrying] = useState(false)
   const [logs, setLogs] = useState<LogEntry[]>([])
-  const [currentLogIndex, setCurrentLogIndex] = useState(0)
 
   // 获取分类信息
   const getCategoryInfo = (category?: string) => {
@@ -263,21 +261,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onDelete, onRetry, o
     if (logs.length <= 1) return
     
     const interval = setInterval(() => {
-      setCurrentLogIndex(prev => (prev + 1) % logs.length)
-    }, 2000) // 每2秒切换一条日志
+      // 移除这行，因为currentLogIndex未使用
+    }, 3000)
     
     return () => clearInterval(interval)
   }, [logs.length])
 
-  const getStatusColor = (status: Project['status']) => {
-    switch (status) {
-      case 'completed': return 'success'
-      case 'processing': return 'processing'
-      case 'error': return 'error'
-      case 'uploading': return 'default'
-      default: return 'default'
-    }
-  }
+  // 删除getStatusColor函数，因为未使用
 
   // 检查是否是等待处理状态 - pending状态显示为导入中
   const isImporting = project.status === 'pending'
@@ -350,12 +340,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onDelete, onRetry, o
         e.currentTarget.style.transform = 'translateY(0)'
         e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)'
       }}
-      bodyStyle={{
-        padding: '12px',
-        background: 'transparent',
-        height: 'calc(100% - 120px)',
-        display: 'flex',
-        flexDirection: 'column'
+      styles={{
+        body: {
+          padding: '12px',
+          background: 'transparent',
+          height: 'calc(100% - 120px)',
+          display: 'flex',
+          flexDirection: 'column'
+        }
       }}
       cover={
         <div 

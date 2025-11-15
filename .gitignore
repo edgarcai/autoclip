@@ -93,3 +93,9 @@ dump.rdb
 # 临时文件
 *.tmp
 *.temp
+.DS_Store
+.DS_Store
+.env
+backend.log
+backend.pid
+backend/.DS_Store

@@ -19,6 +19,8 @@ class ProviderType(Enum):
     OPENAI = "openai"        # OpenAI
     GEMINI = "gemini"        # Google Gemini
     SILICONFLOW = "siliconflow"  # 硅基流动
+    MINIMAX = "minimax"      # MiniMax-M2
+    DEEPSEEK = "deepseek"    # DeepSeek
 
 @dataclass
 class ModelInfo:
@@ -405,6 +407,159 @@ class SiliconFlowProvider(LLMProvider):
             )
         ]
 
+class MiniMaxProvider(LLMProvider):
+    """MiniMax-M2提供商"""
+    
+    def __init__(self, api_key: str, model_name: str = "MiniMax-M2", **kwargs):
+        super().__init__(api_key, model_name, **kwargs)
+        self.base_url = "https://api.minimaxi.com/v1"
+    
+    def call(self, prompt: str, input_data: Any = None, **kwargs) -> LLMResponse:
+        """调用MiniMax-M2 API"""
+        try:
+            import requests
+            
+            full_input = self._build_full_input(prompt, input_data)
+            
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json"
+            }
+            
+            data = {
+                "model": self.model_name,
+                "messages": [{"role": "user", "content": full_input}],
+                "stream": False,
+                "temperature": kwargs.get("temperature", 1.0),
+                "max_tokens": kwargs.get("max_tokens", 1024),
+                **kwargs
+            }
+            
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=headers,
+                json=data,
+                timeout=30
+            )
+            
+            response.raise_for_status()
+            result = response.json()
+            
+            content = result["choices"][0]["message"]["content"]
+            usage = result.get("usage")
+            
+            return LLMResponse(
+                content=content,
+                usage=usage,
+                model=self.model_name,
+                finish_reason=result["choices"][0].get("finish_reason")
+            )
+            
+        except Exception as e:
+            logger.error(f"MiniMax-M2调用失败: {str(e)}")
+            raise
+    
+    def test_connection(self) -> bool:
+        """测试MiniMax-M2连接"""
+        try:
+            response = self.call("请回复'测试成功'")
+            return "测试成功" in response.content or "success" in response.content.lower()
+        except Exception as e:
+            logger.error(f"MiniMax-M2连接测试失败: {e}")
+            return False
+    
+    def get_available_models(self) -> List[ModelInfo]:
+        """获取MiniMax-M2可用模型"""
+        return [
+            ModelInfo(
+                name="MiniMax-M2",
+                display_name="MiniMax-M2",
+                provider=ProviderType.MINIMAX,
+                max_tokens=200000,
+                description="MiniMax-M2大模型，支持长上下文和高质量文本生成"
+            )
+        ]
+
+class DeepSeekProvider(LLMProvider):
+    """DeepSeek提供商"""
+
+    def __init__(self, api_key: str, model_name: str = "deepseek-chat", **kwargs):
+        super().__init__(api_key, model_name, **kwargs)
+        self.base_url = "https://api.deepseek.com/v1"
+
+    def call(self, prompt: str, input_data: Any = None, **kwargs) -> LLMResponse:
+        """调用DeepSeek API"""
+        try:
+            import requests
+
+            full_input = self._build_full_input(prompt, input_data)
+
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json"
+            }
+
+            data = {
+                "model": self.model_name,
+                "messages": [{"role": "user", "content": full_input}],
+                "stream": False,
+                "temperature": kwargs.get("temperature", 1.0),
+                "max_tokens": kwargs.get("max_tokens", 1024),
+                **kwargs
+            }
+
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=headers,
+                json=data,
+                timeout=30
+            )
+
+            response.raise_for_status()
+            result = response.json()
+
+            content = result["choices"][0]["message"]["content"]
+            usage = result.get("usage")
+
+            return LLMResponse(
+                content=content,
+                usage=usage,
+                model=self.model_name,
+                finish_reason=result["choices"][0].get("finish_reason")
+            )
+
+        except Exception as e:
+            logger.error(f"DeepSeek调用失败: {str(e)}")
+            raise
+
+    def test_connection(self) -> bool:
+        """测试DeepSeek连接"""
+        try:
+            response = self.call("请回复'测试成功'")
+            return "测试成功" in response.content or "success" in response.content.lower()
+        except Exception as e:
+            logger.error(f"DeepSeek连接测试失败: {e}")
+            return False
+
+    def get_available_models(self) -> List[ModelInfo]:
+        """获取DeepSeek可用模型"""
+        return [
+            ModelInfo(
+                name="deepseek-chat",
+                display_name="DeepSeek Chat",
+                provider=ProviderType.DEEPSEEK,
+                max_tokens=32768,
+                description="DeepSeek Chat模型，支持对话和文本生成"
+            ),
+            ModelInfo(
+                name="deepseek-coder",
+                display_name="DeepSeek Coder",
+                provider=ProviderType.DEEPSEEK,
+                max_tokens=16384,
+                description="DeepSeek Coder模型，专注于代码生成和编程辅助"
+            )
+        ]
+
 class LLMProviderFactory:
     """LLM提供商工厂"""
     
@@ -413,6 +568,8 @@ class LLMProviderFactory:
         ProviderType.OPENAI: OpenAIProvider,
         ProviderType.GEMINI: GeminiProvider,
         ProviderType.SILICONFLOW: SiliconFlowProvider,
+        ProviderType.MINIMAX: MiniMaxProvider,
+        ProviderType.DEEPSEEK: DeepSeekProvider,
     }
     
     @classmethod

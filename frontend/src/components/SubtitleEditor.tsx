@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react'
-import { Card, Button, Space, Typography, message, Modal, Dropdown, Menu } from 'antd'
+import { Card, Button, Space, Typography, message, Modal } from 'antd'
 import { 
   PlayCircleOutlined, 
   PauseCircleOutlined,
@@ -9,7 +9,6 @@ import {
   SaveOutlined,
   EyeOutlined,
   EyeInvisibleOutlined,
-  MoreOutlined,
   LinkOutlined,
   ReloadOutlined,
   HighlightOutlined
@@ -67,7 +66,6 @@ const SubtitleEditor: React.FC<SubtitleEditorProps> = ({
   })
 
   const playerRef = useRef<ReactPlayer>(null)
-  const subtitleContainerRef = useRef<HTMLDivElement>(null)
 
   // 处理播放进度更新
   const handleProgress = useCallback((progress: { playedSeconds: number }) => {
@@ -226,13 +224,6 @@ const SubtitleEditor: React.FC<SubtitleEditorProps> = ({
     }))
   }, [])
 
-  // 处理全局点击关闭右键菜单
-  const handleGlobalClick = useCallback(() => {
-    if (state.contextMenu.visible) {
-      closeContextMenu()
-    }
-  }, [state.contextMenu.visible, closeContextMenu])
-
   // 添加全局点击事件监听器
   React.useEffect(() => {
     const handleClick = () => {
@@ -383,7 +374,7 @@ const SubtitleEditor: React.FC<SubtitleEditorProps> = ({
       onCancel={onClose}
       width={1400}
       footer={null}
-      destroyOnClose
+      destroyOnHidden
       style={{ top: 20 }}
     >
       <div style={{ display: 'flex', height: '700px', gap: '16px' }}>
@@ -393,7 +384,7 @@ const SubtitleEditor: React.FC<SubtitleEditorProps> = ({
             title="字幕" 
             size="small"
             style={{ height: '100%' }}
-            bodyStyle={{ padding: '12px', height: 'calc(100% - 57px)', overflow: 'hidden' }}
+            styles={{ body: { padding: '12px', height: 'calc(100% - 57px)', overflow: 'hidden' } }}
           >
             <div style={{ 
               height: '100%', 
@@ -417,7 +408,7 @@ const SubtitleEditor: React.FC<SubtitleEditorProps> = ({
             title="样式" 
             size="small"
             style={{ height: '100%' }}
-            bodyStyle={{ padding: '12px', height: 'calc(100% - 57px)', overflow: 'hidden' }}
+            styles={{ body: { padding: '12px', height: 'calc(100% - 57px)', overflow: 'hidden' } }}
           >
             <div style={{ 
               height: '100%', 
@@ -581,7 +572,7 @@ const SubtitleEditor: React.FC<SubtitleEditorProps> = ({
             title="视频预览" 
             size="small"
             style={{ height: '100%' }}
-            bodyStyle={{ padding: '12px', height: 'calc(100% - 57px)', display: 'flex', flexDirection: 'column' }}
+            styles={{ body: { padding: '12px', height: 'calc(100% - 57px)', display: 'flex', flexDirection: 'column' } }}
           >
             <div style={{ flex: 1, position: 'relative', marginBottom: '12px' }}>
               <ReactPlayer

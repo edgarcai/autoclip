@@ -19,6 +19,7 @@ class SettingsRequest(BaseModel):
     openai_api_key: Optional[str] = None
     gemini_api_key: Optional[str] = None
     siliconflow_api_key: Optional[str] = None
+    minimax_api_key: Optional[str] = None
     model_name: Optional[str] = None
     chunk_size: Optional[int] = None
     min_score_threshold: Optional[float] = None
@@ -182,4 +183,4 @@ async def get_current_provider():
         llm_manager = get_llm_manager()
         return llm_manager.get_current_provider_info()
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"获取当前提供商信息失败: {e}") 
+        raise HTTPException(status_code=500, detail=f"获取当前提供商信息失败: {e}")
